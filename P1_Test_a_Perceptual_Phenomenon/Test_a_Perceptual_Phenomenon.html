@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Test a Perceptual Phenomenon</title>
+<title>Test_a_Perceptual_Phenomenon</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11782,12 +11782,15 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="o">%</span><span class="k">pylab</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
 
 <span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
     
@@ -11838,7 +11841,8 @@ div#notebook {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>mean for Congruent is 14.05
+<pre>Populating the interactive namespace from numpy and matplotlib
+mean for Congruent is 14.05
 mode for Congruent is ModeResult(mode=array([ 8.63]), count=array([1]))
 median for Congruent is 14.36
 std for Congruent is 3.48
@@ -11868,12 +11872,11 @@ std for Incongruent is 4.70
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[108]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#%matplotlib inline</span>
-<span class="o">%</span><span class="k">pylab</span> inline
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
 <span class="k">print</span> <span class="s1">&#39;&#39;</span>
 <span class="k">print</span> <span class="s2">&quot;Number of Samples is {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Congruent</span><span class="p">))</span>
 
@@ -11892,8 +11895,7 @@ std for Incongruent is 4.70
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Populating the interactive namespace from numpy and matplotlib
-
+<pre>
 Number of Samples is 24
 </pre>
 </div>
@@ -12056,15 +12058,10 @@ JGUZEiRJUpYhQZIkZRkSJElSliFBkiRlGRIkSVLW/wfh3RZInApQ2AAAAABJRU5ErkJggg==
 <h4 id="5)-Now,-perform-the-statistical-test-and-report-your-results.-What-is-your-confidence-level-and-your-critical-statistic-value?-Do-you-reject-the-null-hypothesis-or-fail-to-reject-it?-Come-to-a-conclusion-in-terms-of-the-experiment-task.-Did-the-results-match-up-with-your-expectations?">5) Now, perform the statistical test and report your results. What is your confidence level and your critical statistic value? Do you reject the null hypothesis or fail to reject it? Come to a conclusion in terms of the experiment task. Did the results match up with your expectations?<a class="anchor-link" href="#5)-Now,-perform-the-statistical-test-and-report-your-results.-What-is-your-confidence-level-and-your-critical-statistic-value?-Do-you-reject-the-null-hypothesis-or-fail-to-reject-it?-Come-to-a-conclusion-in-terms-of-the-experiment-task.-Did-the-results-match-up-with-your-expectations?">&#182;</a></h4><p>$H_0: \mu_{Congruent} = \mu_{Incongruent}$</p>
 <p>$H_a: \mu_{Congruent} \neq \mu_{Incongruent}$</p>
 <p><strong>The t-critical is:</strong>    t(23) = 1.71, p&lt;.05, one-tailed</p>
-<p><strong>The Standard error of Mean is :</strong>  4.63</p>
-<p><strong>The Mean different is :</strong> 8.2</p>
-<p><strong>The t-statistic is  :</strong>  8.2/4.63 = 3.57</p>
-<p>The t did not fall in the critical region. P is less than .05. These results statistically significant, so that we could reject null hypothesis $H_0$. So that means Congruent and Incongruent data are quite differnt. The mean of the popultaion between these two are differnt.</p>
-<p><strong>The Cohen's d is :</strong>  d = 1.33</p>
-<p>So the Two means are 1.33 standard deviation units apart</p>
-<p><strong>The $r^2$ value is: </strong>  $r^2$= 0.36</p>
-<p><strong>The margin of error for 95%CI is: </strong> 2.069*4.63 = 9.58</p>
-<p><strong>The 95% CI for the mean is : </strong>  95%CI(12.44,31.55)</p>
+<p><strong>The Mean of difference is :</strong>  7.95</p>
+<p><strong>The Standard error of Mean is :</strong>  4.86</p>
+<p><strong>The t-statistic is  :</strong>  7.95/4.86 = 1.64</p>
+<p>The t fall in the critical region. P is less than .05. This result is statistically not significant, so that we could will take null hypothesis $H_0$. So that Congruent and Incongruent data are not differnt. The mean of the popultaion between these two are not differnt.</p>
 
 </div>
 </div>
