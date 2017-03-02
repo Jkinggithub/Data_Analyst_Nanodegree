@@ -11797,7 +11797,7 @@ div#notebook {
     <span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
     <span class="n">mode</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
     <span class="n">median</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-    <span class="n">std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">print</span> <span class="s1">&#39;mean for {} is {:.2f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
     <span class="k">print</span> <span class="s1">&#39;mode for {} is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
     <span class="k">print</span> <span class="s1">&#39;median for {} is {:.2f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">median</span><span class="p">)</span>
@@ -11845,12 +11845,12 @@ div#notebook {
 mean for Congruent is 14.05
 mode for Congruent is ModeResult(mode=array([ 8.63]), count=array([1]))
 median for Congruent is 14.36
-std for Congruent is 3.48
+std for Congruent is 3.56
 
 mean for Incongruent is 22.02
 mode for Incongruent is ModeResult(mode=array([ 15.687]), count=array([1]))
 median for Incongruent is 21.02
-std for Incongruent is 4.70
+std for Incongruent is 4.80
 </pre>
 </div>
 </div>
@@ -12058,10 +12058,133 @@ JGUZEiRJUpYhQZIkZRkSJElSliFBkiRlGRIkSVLW/wfh3RZInApQ2AAAAABJRU5ErkJggg==
 <h4 id="5)-Now,-perform-the-statistical-test-and-report-your-results.-What-is-your-confidence-level-and-your-critical-statistic-value?-Do-you-reject-the-null-hypothesis-or-fail-to-reject-it?-Come-to-a-conclusion-in-terms-of-the-experiment-task.-Did-the-results-match-up-with-your-expectations?">5) Now, perform the statistical test and report your results. What is your confidence level and your critical statistic value? Do you reject the null hypothesis or fail to reject it? Come to a conclusion in terms of the experiment task. Did the results match up with your expectations?<a class="anchor-link" href="#5)-Now,-perform-the-statistical-test-and-report-your-results.-What-is-your-confidence-level-and-your-critical-statistic-value?-Do-you-reject-the-null-hypothesis-or-fail-to-reject-it?-Come-to-a-conclusion-in-terms-of-the-experiment-task.-Did-the-results-match-up-with-your-expectations?">&#182;</a></h4><p>$H_0: \mu_{Congruent} = \mu_{Incongruent}$</p>
 <p>$H_a: \mu_{Congruent} \neq \mu_{Incongruent}$</p>
 <p><strong>The t-critical is:</strong>    t(23) = 1.71, p&lt;.05, one-tailed</p>
-<p><strong>The Mean of difference is :</strong>  7.95</p>
-<p><strong>The Standard error of Mean is :</strong>  4.86</p>
-<p><strong>The t-statistic is  :</strong>  7.95/4.86 = 1.64</p>
-<p>The t fall in the critical region. P is less than .05. This result is statistically not significant, so that we could will take null hypothesis $H_0$. So that Congruent and Incongruent data are not differnt. The mean of the popultaion between these two are not differnt.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#The Mean of difference is :</span>
+<span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Incongruent</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Congruent</span><span class="p">)</span>
+<span class="n">diff_mean</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">diff_mean</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>7.96479166667
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#The Standard Deviation of Mean is :</span>
+<span class="n">diff_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">diff_std</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>4.86482691036
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#The Standard Error of Mean is :</span>
+<span class="n">diff_SE</span> <span class="o">=</span> <span class="n">diff_std</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Congruent</span><span class="p">))</span>
+<span class="k">print</span> <span class="n">diff_SE</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0.993028634778
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#The t-statistic is  :</span>
+<span class="n">t_stat</span> <span class="o">=</span> <span class="n">diff_mean</span> <span class="o">/</span> <span class="n">diff_SE</span>
+<span class="k">print</span> <span class="n">t_stat</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>8.02070694411
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The t-statistic is 8.02. The t did not fall in the critical region. P is less than .05. This result is statistically significant, so that we could reject null hypothesis $H_0$. So that Congruent and Incongruent data are differnt. The mean of the popultaion between these two are differnt.</p>
 
 </div>
 </div>
